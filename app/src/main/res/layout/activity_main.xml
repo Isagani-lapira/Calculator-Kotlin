@@ -1,18 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="hardcodedtext ,VisualLintButtonSize"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/dark"
+        android:padding="10dp"
+        android:gravity="end"
+        android:layout_weight="2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/history"
+            android:contentDescription="@string/history" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:layout_margin="10dp" />
+        <TextView
+            android:id="@+id/tvValue"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:gravity="end"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/top_rounded"
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:columnCount="4"
+            android:rowCount="3"
+            android:useDefaultMargins="true">
+
+
+            <Button
+                android:id="@+id/btnAc"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:background="@drawable/button_light"
+                android:gravity="center"
+                android:text="AC"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnParenthesis"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="()"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnDivide"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="/"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnMultiplication"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="*"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnSeven"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="7"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnEight"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="8"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnNine"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="9 "
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnSubtraction"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="-"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnFour"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="4"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnFive"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="5"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnSix"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="6"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_gravity="fill"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:textColor="@color/dark"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:background="@drawable/button_light"
+                android:text="AC"
+                tools:ignore="VisualLintButtonSize" />
+
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:background="@color/dark">
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
