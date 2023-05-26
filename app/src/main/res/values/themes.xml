@@ -5,4 +5,5 @@
          <item name="colorSecondary">@color/dark</item>
     </style>
 
+    <style name="Theme.CalculatorKotlin" parent="Base.Theme.Calculator" />
 </resources>
