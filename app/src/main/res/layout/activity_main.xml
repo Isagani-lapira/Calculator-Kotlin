@@ -413,7 +413,7 @@
                 android:textColor="@color/white"
                 android:background="@drawable/button_light"
                 android:backgroundTint="@color/dark"
-                android:onClick="operationButton"
+                android:onClick="calculate"
                 android:text="="
                 tools:ignore="VisualLintButtonSize" />
 
