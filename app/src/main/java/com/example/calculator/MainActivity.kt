@@ -1,10 +1,13 @@
 package com.example.calculator
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import net.objecthunter.exp4j.ExpressionBuilder
 
@@ -16,7 +19,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvText: TextView
     private lateinit var tvPreview: TextView
     private lateinit var btnAc: Button
-
+    private lateinit var ivHistory: ImageView
+    private lateinit var operationList: ArrayList<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,10 +30,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun listener() {
+
+        ivHistory.setOnClickListener{
+            val intent = Intent(this,HistoryActivity::class.java)
+            intent.putStringArrayListExtra("operation",operationList)
+            startActivity(intent)
+        }
         //clear the input
         btnAc.setOnClickListener{
-            tvPreview.text = ""
-            tvText.text = ""
+            clearThings()
         }
     }
 
@@ -39,7 +48,9 @@ class MainActivity : AppCompatActivity() {
         tvText = findViewById(R.id.tvValue)
         tvPreview = findViewById(R.id.tvPreview)
         btnAc = findViewById(R.id.btnAc)
+        ivHistory = findViewById(R.id.ivHistory)
 
+        operationList = ArrayList()
     }
 
 
@@ -64,13 +75,21 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun calculate(view: View) {
-        value += tvText.text
-        tvPreview.text = "$value="
-        text=""
 
-        val expression = tvPreview.text.toString().trimEnd('=')
-        val result = evaluateMathExpression(expression)
-        tvText.text = result.toString()
+        //check if the user input something
+        if(tvPreview.text.toString() != ""){
+            value += tvText.text
+            tvPreview.text = "$value="
+            text=""
+
+            val expression = tvPreview.text.toString().trimEnd('=')
+            val result = evaluateMathExpression(expression)
+            tvText.text = tvPreview.text.toString()+result.toString()
+            val operation = tvText.text.toString()
+            operationList.add(operation)
+            tvPreview.text = ""
+        } else Toast.makeText(this,"Empty fields",Toast.LENGTH_LONG).show()
+
     }
 
     //a function that turning String into Mathematical expression
@@ -79,6 +98,10 @@ class MainActivity : AppCompatActivity() {
         return exp.evaluate()
     }
 
+    private fun clearThings(){
+        tvPreview.text = ""
+        tvText.text = ""
+    }
 }
 
 

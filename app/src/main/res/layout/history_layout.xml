@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+        <TextView
+            android:id="@+id/tvSequence"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:textColor="@color/dark"
+            android:gravity="center"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/tvOperation"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:textColor="@color/dark"/>
+    </LinearLayout>
+
+</LinearLayout>
