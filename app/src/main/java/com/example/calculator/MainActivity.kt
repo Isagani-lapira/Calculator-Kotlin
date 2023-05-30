@@ -88,6 +88,7 @@ class MainActivity : AppCompatActivity() {
             val operation = tvText.text.toString()
             operationList.add(operation)
             tvPreview.text = ""
+            value = ""
         } else Toast.makeText(this,"Empty fields",Toast.LENGTH_LONG).show()
 
     }
