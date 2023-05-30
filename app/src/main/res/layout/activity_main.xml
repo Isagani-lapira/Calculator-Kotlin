@@ -39,8 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/white"
-            android:textSize="48sp"
-            android:gravity="end"
+            android:textSize="32sp"
+            android:gravity="end|bottom"
             android:textStyle="bold" />
 
     </LinearLayout>
