@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnAc: Button
     private lateinit var ivHistory: ImageView
     private lateinit var operationList: ArrayList<String>
+    private var isOpenParenthesis = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,8 +57,21 @@ class MainActivity : AppCompatActivity() {
 
 
     fun buttonClick(view:View){
+        var btnText = (view as Button).text.toString()
+
+        //add parenthesis
+        if(btnText == "()") {
+            if (isOpenParenthesis){
+                btnText =   "("
+                isOpenParenthesis = false
+            } else {
+                btnText = ")"
+                isOpenParenthesis =true
+            }
+        }
+
         //when clicked the button it will appear on the preview of text
-        text  += (view as Button).text.toString()
+        text  += btnText
         tvText.text = text
     }
 
@@ -102,6 +116,8 @@ class MainActivity : AppCompatActivity() {
     private fun clearThings(){
         tvPreview.text = ""
         tvText.text = ""
+        text=""
+        isOpenParenthesis = true
     }
 }
 
